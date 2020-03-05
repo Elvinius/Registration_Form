@@ -1,1 +1,2 @@
 ##This small project will helps us learn the essentials of the HTML form and the ways for the user validation.
+First of all, HTML form will be created and later PHP will be added for the user input validation.
