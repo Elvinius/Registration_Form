@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Web application form</title>
+    <title>Registration form</title>
     <meta charset="utf-8">
     <meta lang="EN">
     <link rel="stylesheet" type="text/css" href="styles.css">
@@ -10,7 +10,7 @@
 <body>
 <div id="container">
     <form method="GET" action="form_handling.html">
-        <p>Use the following form to sign up</p>
+        <p>Use the following form to register</p>
         <input type="text" name="username" placeholder="Username" required>
         <input type="password" name="password" placeholder="Password" required>
         <label for="age">Select your age</label>
