@@ -35,15 +35,18 @@
             }
             ?>
         </select>
-        <input type="email" name="email" id="email" placeholder="Enter a valid email address" required>
+        <input type="email" name="email" id="email" placeholder="Enter a valid email address" autocomplete="on" required>
         <input type="tel"  placeholder="Add your phone number" x-autocompletetype="tel" pattern="(^\+[0-9]{2}|^\+[0-9]{2}\(0\)|^\(\+[0-9]{2}\)\(0\)|^00[0-9]{2}|^0)([0-9]{9}$|[0-9\-\s]{10}$)">
         <label for="country">Select your country</label>
         <select id="country" name="country" class="select-css">
-            <option name="country" value="France">France</option>
-            <option name="country" value="Belgium">Belgium</option>
-            <option name="country" value="Switzerland">Switzerland</option>
-            <option name="country" value="Estonia">Estonia</option>
+            <?php
+            $countries = ["Azerbaijan", "Germany", "Netherlands", "Estonia", "Sweden", "Romania", "Slovakia", "France", "Slovenia", "India"];
+            foreach ($countries as $value) {
+                echo("<option>" . $value . "</option>");
+            }
+            ?>
         </select>
+        <label for="arrival-date">Select your arrival date</label>
         <input type="date" id="arrival-date" name="arrival-date" min="2020-01-01" max="2029-01-01" required>
         <input type="Submit" class="btn" value="Submit">
     </form>
