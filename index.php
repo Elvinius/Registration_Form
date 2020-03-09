@@ -28,17 +28,15 @@
         </label>
         <input type="password" name="password" placeholder="Password" required>
         <label for="age">Select your age</label>
-        <select class="select-css" name="age">
+        <select class="select-css" name="age" required>
             <?php
-
             for ($i = 18; $i < 100; $i++) {
                 echo("<option>" . $i . "</option>");
             }
             ?>
-            <option name="age" value="19">19</option>
-            <option name="age" value="20">20</option>
-
         </select>
+        <input type="email" name="email" id="email" placeholder="Enter a valid email address" required>
+        <input type="tel"  placeholder="Add your phone number" x-autocompletetype="tel" pattern="(^\+[0-9]{2}|^\+[0-9]{2}\(0\)|^\(\+[0-9]{2}\)\(0\)|^00[0-9]{2}|^0)([0-9]{9}$|[0-9\-\s]{10}$)">
         <label for="country">Select your country</label>
         <select id="country" name="country" class="select-css">
             <option name="country" value="France">France</option>
@@ -46,6 +44,7 @@
             <option name="country" value="Switzerland">Switzerland</option>
             <option name="country" value="Estonia">Estonia</option>
         </select>
+        <input type="date" id="arrival-date" name="arrival-date" min="2020-01-01" max="2029-01-01" required>
         <input type="Submit" class="btn" value="Submit">
     </form>
 </div>

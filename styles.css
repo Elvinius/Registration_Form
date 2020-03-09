@@ -166,3 +166,11 @@ input:focus{
     background: white;
 }
 
+input[type="required"]:after {
+    content:" *";
+    color: red;
+}
+
+input[type="date"] {
+    font: 500 16px/22px "Roboto", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
