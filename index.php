@@ -11,7 +11,21 @@
 <div id="container">
     <form method="GET" action="form_handling.html">
         <p>Use the following form to register</p>
-        <input type="text" name="username" placeholder="Username" required>
+        <input type="text" name="firstname" placeholder="First name" required>
+        <input type="text" name="middlename" placeholder="Middle name">
+        <input type="text" name="lastname" placeholder="Last name" required>
+        <label class="radio-container">Mr
+            <input type="radio" checked="checked" name="salutation">
+            <span class="checkmark"></span>
+        </label>
+        <label class="radio-container">Mrs
+            <input type="radio" name="salutation">
+            <span class="checkmark"></span>
+        </label>
+        <label class="radio-container">Ms
+            <input type="radio" name="salutation">
+            <span class="checkmark"></span>
+        </label>
         <input type="password" name="password" placeholder="Password" required>
         <label for="age">Select your age</label>
         <select class="select-css" name="age">
