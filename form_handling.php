@@ -11,7 +11,7 @@
     // Open the file to get existing content
     $current = file_get_contents($file);
     // Append a new person to the file
-    $registration_entries = [$_POST["firstname"],$_POST["middlename"],$_POST["lastname"], $_POST["email"]  ];
+    $registration_entries = [$_POST["firstname"],$_POST["middlename"],$_POST["lastname"], $_POST["password"], $_POST["age"], $_POST["email"], $_POST["phone"], $_POST["country"], $_POST["arrival-date"]];
     $registration_text = "";
     foreach ($registration_entries as $value){
         $registration_text .= $value . "\n";
@@ -20,6 +20,17 @@
     file_put_contents($file, $registration_text);
     global $display_array;
     $display_array = explode("\n", $registration_text);
+    $registered_user = [
+        "First name" => $display_array[0],
+        "Middle name" => $display_array[1],
+        "Last name" => $display_array[2],
+        "Password" => $display_array[3],
+        "Age" => $display_array[4],
+        "Email" => $display_array[5],
+        "Phone" => $display_array[6],
+        "Country" => $display_array[7],
+        "Arrival date" => $display_array[8]
+    ];
 
     ?>
 
@@ -27,11 +38,11 @@
         <h1>Thank You</h1>
         <p>Here is the information you have submitted:</p>
         <ol>
-            <li><em>Name:</em> <?php echo $display_array[0]?></li>
-            <li><em>Email:</em> <?php echo $display_array[1]?></li>
-            <li><em>Subject:</em> <?php echo $_POST["country"]?></li>
-            <li><em>Message:</em> <?php echo $_POST["age"]?></li>
-            <li><em>Message:</em> <?php echo $_POST["salutation"]?></li>
+            <?php
+              foreach ($registered_user as $key => $value){
+                  echo "<li> " . $key . "-" . $value . " </li>";
+              }
+            ?>
         </ol>
     </div>
 </body>
