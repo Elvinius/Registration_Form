@@ -8,6 +8,29 @@
 
 </head>
 <body>
+<?php
+// define variables and set to empty values
+$firstname = $middlename = $lastname = $password = $email = $phone = $country = $age = $arrivalDate = "";
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $firstname = test_input($_POST["firstname"]);
+    $middlename = test_input($_POST["middlename"]);
+    $lastname = test_input($_POST["lastname"]);
+    $email = test_input($_POST["email"]);
+    $password = test_input($_POST["password"]);
+    $phone = test_input($_POST["phone"]);
+    $age = test_input($_POST["age"]);
+    $country = test_input($_POST["country"]);
+    $arrivalDate = test_input($_POST["arrival-date"]);
+}
+
+function test_input($data) {
+    $data = trim($data);
+    $data = stripslashes($data);
+    $data = htmlspecialchars($data);
+    return $data;
+}
+?>
 <div id="container">
     <form method="POST" action="form_handling.php">
         <p>Use the following form to register</p>
@@ -36,7 +59,7 @@
             ?>
         </select>
         <input type="email" name="email" id="email" placeholder="Enter a valid email address" autocomplete="on" required>
-        <input type="tel"  placeholder="Add your phone number" x-autocompletetype="tel" pattern="(^\+[0-9]{2,3}|^\+[0-9]{2}\(0\)|^\(\+[0-9]{2}\)\(0\)|^00[0-9]{2}|^0)([0-9]{9}$|[0-9\-\s]{10}$)">
+        <input type="tel"  name="phone" placeholder="Add your phone number" x-autocompletetype="tel" pattern="(^\+[0-9]{2,3}|^\+[0-9]{2}\(0\)|^\(\+[0-9]{2}\)\(0\)|^00[0-9]{2}|^0)([0-9]{9}$|[0-9\-\s]{10}$)">
         <label for="country">Select your country</label>
         <select id="country" name="country" class="select-css">
             <?php
