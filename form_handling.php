@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Login details</title>
-	<link rel="stylesheet" type="text/css" href="styles.css">
+	<title>Resgistration details</title>
+    <meta charset="utf-8">
+    <meta lang="EN">
+	<link rel="stylesheet" type="text/css" href="form_handling.css">
 </head>
 <body>
 
@@ -35,15 +37,18 @@
     ?>
 
     <div id="container">
-        <h1>Thank You</h1>
+        <h2>Your registration is complete</h2>
         <p>Here is the information you have submitted:</p>
         <ol>
             <?php
               foreach ($registered_user as $key => $value){
-                  echo "<li> " . $key . "-" . $value . " </li>";
+                  echo "<li> " . $key . " - " . $value . " </li>";
               }
             ?>
         </ol>
+        <p>The number of registration entries is <?php echo sizeof($display_array) - 1 ?></p>
+        <p>Download the registration<a href="download.php"> file</a></p>
+        <a href="index.php">Back to the main page</a>
     </div>
 </body>
 </html>
