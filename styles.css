@@ -3,8 +3,7 @@
 }
 
 body {
-	background: #466368;
-    background: radial-gradient(#648880, #293f50);
+    background: linear-gradient(90deg, #00d2ff 0%, #3a47d5 100%);
 	font: 500 16px/22px "Roboto", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-weight: 700;
 }
@@ -34,8 +33,10 @@ input:focus{
 	
 	margin: 15% auto;
 	width: 50%;
-	background-color: rgb(245,245,245);
-	display: flex;
+    background: #C9D6FF;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #E2E2E2, #C9D6FF);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #E2E2E2, #C9D6FF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    display: flex;
 	padding: 20px;
 	border-radius: 5px;
 	justify-content: center;

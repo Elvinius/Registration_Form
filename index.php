@@ -9,7 +9,7 @@
 </head>
 <body>
 <div id="container">
-    <form method="GET" action="form_handling.html">
+    <form method="POST" action="form_handling.php">
         <p>Use the following form to register</p>
         <input type="text" name="firstname" placeholder="First name" required>
         <input type="text" name="middlename" placeholder="Middle name">
@@ -36,7 +36,7 @@
             ?>
         </select>
         <input type="email" name="email" id="email" placeholder="Enter a valid email address" autocomplete="on" required>
-        <input type="tel"  placeholder="Add your phone number" x-autocompletetype="tel" pattern="(^\+[0-9]{2}|^\+[0-9]{2}\(0\)|^\(\+[0-9]{2}\)\(0\)|^00[0-9]{2}|^0)([0-9]{9}$|[0-9\-\s]{10}$)">
+        <input type="tel"  placeholder="Add your phone number" x-autocompletetype="tel" pattern="(^\+[0-9]{2,3}|^\+[0-9]{2}\(0\)|^\(\+[0-9]{2}\)\(0\)|^00[0-9]{2}|^0)([0-9]{9}$|[0-9\-\s]{10}$)">
         <label for="country">Select your country</label>
         <select id="country" name="country" class="select-css">
             <?php
