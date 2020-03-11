@@ -5,10 +5,13 @@
     <meta charset="utf-8">
     <meta lang="EN">
 	<link rel="stylesheet" type="text/css" href="form_handling.css">
+    <!-- Add icon library for download button-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
 
     <?php
+    global $file;
     $file = 'registration.txt';
     // Open the file to get existing content
     $current = file_get_contents($file); //when using this function we don't need to close the file
@@ -16,12 +19,12 @@
     $registration_entries = [$_POST["firstname"],$_POST["middlename"],$_POST["lastname"],$_POST["salutation"], $_POST["password"], $_POST["age"], $_POST["email"], $_POST["phone"], $_POST["country"], $_POST["arrival-date"]];
     $registration_text = "";
     foreach ($registration_entries as $value){
-        $registration_text .= $value . "\n";
+        $registration_text .= $value . "\t";
     }
     // Write the contents back to the file
-    file_put_contents($file, $registration_text);
+    file_put_contents($file, $registration_text . "; \n", FILE_APPEND);
     global $display_array;
-    $display_array = explode("\n", $registration_text);
+    $display_array = explode("\t", $registration_text);
     $registered_user = [
         "First name" => $display_array[0],
         "Middle name" => $display_array[1],
@@ -35,6 +38,7 @@
         "Arrival date" => $display_array[9]
     ];
 
+
     ?>
 
     <div id="container">
@@ -47,9 +51,11 @@
               }
             ?>
         </ol>
-        <p>The number of registration entries is <?php echo sizeof($display_array) - 1 ?></p>
-        <p>Download the registration<a href="download.php"> file</a></p>
-        <a href="index.php">Back to the main page</a>
+        <p>The number of registration entries is <?php echo substr_count(file_get_contents($file), ";") ?></p>
+        <p>Download the registration file below:</p>
+        <button class="btn" ><i class="fa fa-download"></i> <a href="download.php">Download</a></button>
+        <a href="index.php" class="navigate">Back to the main page</a>
+
     </div>
 </body>
 </html>

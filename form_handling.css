@@ -21,25 +21,47 @@ body {
 
 }
 
-a{
+a.navigate{
     text-decoration: none;
 }
 /* unvisited link */
-a:link {
+a.navigate:link {
     color: red;
 }
 
 /* visited link */
-a:visited {
+a.navigate:visited {
     color: green;
 }
 
 /* mouse over link */
-a:hover {
+a.navigate:hover {
     color: peru;
 }
 
 /* selected link */
-a:active {
+a.navigate:active {
     color: blue;
+}
+
+/* Style buttons */
+.btn {
+    background-color: DodgerBlue;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 18px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+/* Darker background on mouse-over */
+.btn:hover {
+    background-color: RoyalBlue;
+}
+
+.btn a {
+    text-decoration: none;
+    color:white;
 }
