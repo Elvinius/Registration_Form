@@ -5,17 +5,17 @@
     <meta charset="utf-8">
     <meta lang="EN">
     <link rel="stylesheet" type="text/css" href="styles.css">
-
 </head>
 <body>
 <?php
 // define variables and set to empty values
-$firstname = $middlename = $lastname = $password = $email = $phone = $country = $age = $arrivalDate = "";
+$firstname = $middlename = $lastname = $password = $email = $phone = $country = $age = $arrivalDate = $salutation_title ="";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $firstname = test_input($_POST["firstname"]);
     $middlename = test_input($_POST["middlename"]);
     $lastname = test_input($_POST["lastname"]);
+    $salutation_title = test_input($_POST["salutation"]);
     $email = test_input($_POST["email"]);
     $password = test_input($_POST["password"]);
     $phone = test_input($_POST["phone"]);
@@ -38,15 +38,15 @@ function test_input($data) {
         <input type="text" name="middlename" placeholder="Middle name">
         <input type="text" name="lastname" placeholder="Last name" required>
         <label class="radio-container">Mr
-            <input type="radio" checked="checked" name="salutation">
+            <input type="radio" checked="checked" name="salutation" value="Mr">
             <span class="checkmark"></span>
         </label>
         <label class="radio-container">Mrs
-            <input type="radio" name="salutation">
+            <input type="radio" name="salutation" value="Mrs">
             <span class="checkmark"></span>
         </label>
         <label class="radio-container">Ms
-            <input type="radio" name="salutation">
+            <input type="radio" name="salutation" value="Ms">
             <span class="checkmark"></span>
         </label>
         <input type="password" name="password" placeholder="Password" required>
