@@ -176,3 +176,8 @@ input[type="required"]:after {
 input[type="date"] {
     font: 500 16px/22px "Roboto", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
+
+.mandatory {
+    color: red;
+    display: inline;
+}

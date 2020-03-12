@@ -38,7 +38,6 @@
         "Arrival date" => $display_array[9]
     ];
 
-
     ?>
 
     <div id="container">
@@ -54,7 +53,7 @@
         <p>The number of registration entries is <?php echo substr_count(file_get_contents($file), ";") ?></p>
         <p>Download the registration file below:</p>
         <button class="btn" ><i class="fa fa-download"></i> <a href="download.php">Download</a></button>
-        <a href="index.php" class="navigate">Back to the main page</a>
+        <button class="back-btn"><a href="index.php" class="navigate">Back</a</button>
 
     </div>
 </body>
